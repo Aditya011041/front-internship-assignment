@@ -1,0 +1,144 @@
+.home-content {
+  margin-left: 250px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: linear-gradient(15deg, #2d5c9b 19.67%, #c2ec09 127.56%);
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(186, 8, 8, 0.2);
+  padding: 10px;
+  margin-right: 0%;
+}
+
+.searchBtnIcon {
+  background-color: #ff1ea5;
+  color: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+.clearBtnIcon {
+  background-color: #1e90ff;
+  color: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+
+.search-button button:hover {
+  background-color: #c97c18;
+  cursor: pointer;
+}
+
+.search-button input[type="text"] {
+  border: none;
+  padding: 10px;
+  flex: 1;
+  background-color: transparent;
+  color: #1e90ff;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.search-button input[type="text"]::placeholder {
+  color: #ff221e;
+}
+
+.search-button input[type="text"]:focus {
+  outline: none;
+}
+
+.search-button .mat-icon {
+  font-size: 25px;
+}
+
+.search-button button:last-child {
+  margin-right: 0;
+}
+
+.search-button button:last-child .mat-icon {
+  font-size: 20px;
+}
+
+.search-button button:last-child:hover {
+  background-color: #e74c3c;
+}
+
+//Search a book/ No Result Message
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4ffe0;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin: 20px;
+  height: 500px;
+}
+
+.message p {
+  font-size: 26px;
+  font-weight: 600;
+  color: #e40707;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+//CSS
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+}
+
+.pagination button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination p{
+  margin-right: 500px;
+}

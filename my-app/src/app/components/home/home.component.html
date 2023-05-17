@@ -1,0 +1,65 @@
+<sidebar-comp></sidebar-comp>
+
+<div class="home-content">
+
+  <div class="header">
+    <div class="tw-text-24-px tw-font-600">Open Books Library</div>
+
+    <div class="search-button">
+      <button class="searchBtnIcon" mat-icon-button (click)="searchBooks()" >
+        <mat-icon aria-label="Search Icon">search</mat-icon>
+      </button>
+
+      <input
+        [formControl]="bookSearch"
+        name="searchKey"
+        type="text"
+        placeholder="Search Here..."
+        class="tw-border-0 tw-bg-inherit input-box "
+        (keyup.enter)="searchBooks()"
+      >
+      <button class="clearBtnIcon" mat-icon-button (click)="clearSearch(); " *ngIf="bookSearch.value || searchResBooks.length">
+        <mat-icon aria-label="Clear Icon">clear</mat-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <div *ngIf="loading">
+    <loader-comp></loader-comp>
+  </div>
+
+  <div *ngIf="!loading">
+    <div class="no-results" *ngIf="bookSearch.value  && searchResBooks.length === 0">
+      <div class="message">
+        <p>No results found.<br>
+          😞<br>Click 🔍 to Try Again </p>
+      </div>
+    </div>
+
+    <div class="searchResSection" *ngIf="searchResBooks.length > 0">
+
+      <front-end-internship-assignment-table-view [booksList]="searchResBooks"></front-end-internship-assignment-table-view>
+
+      <div class="pagination" >
+        <p>Showing {{ (currentPage - 1) * pageSize + 1 }} - {{ (currentPage - 1) * pageSize + searchResBooks.length }} of {{ totalResults }} results</p>
+        <button class="prev" [disabled]="currentPage === 1" (click)="prevPage()">Prev</button>
+        <ng-container *ngFor="let page of getPages()">
+          <button [class.active]="currentPage === page" (click)="goToPage(page)">{{ page }}</button>
+        </ng-container>
+        <button class="next" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+      </div>
+    </div>
+
+
+
+  <div *ngIf="bookSearch.value.length < 3 && searchResBooks.length === 0">
+    <div class="message">
+      <p>Search for a book...</p>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
